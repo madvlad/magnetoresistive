@@ -8,8 +8,9 @@ public class Shooter : MonoBehaviour {
     public Animation gunAnimation;
     public GameObject flash;
     public GameObject bulletHole;
+    public GameObject crosshair;
+    public float reloadTime = 2f;
 
-    private float reloadTime = 2f;
     private float reloadChange = 0.0f;
 
     public void FixedUpdate()
@@ -31,13 +32,30 @@ public class Shooter : MonoBehaviour {
             Invoke("HideFlash", 0.05f);
 
             RaycastHit hit;
+            int layerMask = ~(1 << 2);
             
-            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity))
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask))
             {
-                var hitRotation = Quaternion.FromToRotation(Vector3.right, hit.normal);
-                Vector3 hitPoint = new Vector3(hit.point.x, hit.point.y, hit.point.z) + (hit.normal * 0.1f);
-                GameObject.Instantiate(bulletHole, hitPoint, hitRotation);
+                if (hit.collider.CompareTag("Enemy"))
+                {
+                    hit.collider.gameObject.SendMessage("ReceiveHit");
+                }
+                else
+                {
+                    var hitRotation = Quaternion.FromToRotation(Vector3.right, hit.normal);
+                    Vector3 hitPoint = new Vector3(hit.point.x, hit.point.y, hit.point.z) + (hit.normal * 0.1f);
+                    GameObject.Instantiate(bulletHole, hitPoint, hitRotation);
+                }
             }
+        }
+
+        if (Input.GetButton("Fire2"))
+        {
+            crosshair.SetActive(true);
+        }
+        else
+        {
+            crosshair.SetActive(false);
         }
     }
 
