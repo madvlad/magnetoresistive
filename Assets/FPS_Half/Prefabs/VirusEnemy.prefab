@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 23529996820675068}
   - component: {fileID: 33295406086672470}
   - component: {fileID: 65399317810966392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Virus
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 111326299419257060}
   - component: {fileID: 23388679189546344}
   - component: {fileID: 33562879395037224}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PainMesh
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4151052595636822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: VirusEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
