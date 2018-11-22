@@ -4503,9 +4503,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3af18029511a3254aa8e637b4bf43e85, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10037,6 +10037,14 @@ Prefab:
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.230003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_Name
+      value: WorldCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
@@ -30583,7 +30591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248491598}
   m_Layer: 0
-  m_Name: WeaponViewModel
+  m_Name: ViewModelCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32425,24 +32433,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1354306021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1354306015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4016e698d92c3f488dc3480aae99df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reportSoundSource: {fileID: 1354306020}
-  reportSound: {fileID: 8300000, guid: 6774ff6fd321411488fcdd1bde8b23d3, type: 3}
-  gunAnimation: {fileID: 526858802}
-  flash: {fileID: 1043075924}
-  bulletHole: {fileID: 1167941436020464, guid: 58a9ff8184110b94591163fe89674640, type: 2}
-  crosshair: {fileID: 338109841}
-  reloadTime: 1.35
 --- !u!43 &1364001388
 Mesh:
   m_ObjectHideFlags: 0
@@ -33797,6 +33787,42 @@ Transform:
   m_Father: {fileID: 858162914}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1433415276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0,
+    type: 2}
+  m_PrefabInternal: {fileID: 306003004}
+--- !u!114 &1433415277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1433415276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e496b51b52ddc9c448fa345dd85d2d63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDeathSound: {fileID: 8300000, guid: 8c4377f6e49945c46b3620530a75e8aa, type: 3}
+  DeathOverlay: {fileID: 1956002310}
+--- !u!114 &1433415282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1433415276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4016e698d92c3f488dc3480aae99df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reportSoundSource: {fileID: 1354306020}
+  reportSound: {fileID: 8300000, guid: 6774ff6fd321411488fcdd1bde8b23d3, type: 3}
+  gunAnimation: {fileID: 526858802}
+  flash: {fileID: 1043075924}
+  bulletHole: {fileID: 1167941436020464, guid: 58a9ff8184110b94591163fe89674640, type: 2}
+  crosshair: {fileID: 338109841}
+  reloadTime: 1.35
 --- !u!1 &1438469893
 GameObject:
   m_ObjectHideFlags: 0
@@ -37570,6 +37596,7 @@ GameObject:
   - component: {fileID: 1779897013}
   - component: {fileID: 1779897015}
   - component: {fileID: 1779897014}
+  - component: {fileID: 1779897016}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -37646,6 +37673,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1779897016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1779897012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f5d0a3948c77e49a35f704ee0c391b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: 07d8b6ae02eda3a4e8b5e0c3db2fa317, type: 2}
 --- !u!43 &1803803778
 Mesh:
   m_ObjectHideFlags: 0
@@ -40766,7 +40805,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -40807,6 +40846,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 338109842}
+  - {fileID: 1956002311}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41182,6 +41222,74 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1956002310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1956002311}
+  - component: {fileID: 1956002313}
+  - component: {fileID: 1956002312}
+  m_Layer: 5
+  m_Name: DeathScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1956002311
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1956002310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1936096763}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000013828, y: 0}
+  m_SizeDelta: {x: 800, y: 443}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1956002312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1956002310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 2800000, guid: 1e46f4008eb0fde4bbef0342db8cffac, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1956002313
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1956002310}
+  m_CullTransparentMesh: 0
 --- !u!1 &1956942995
 GameObject:
   m_ObjectHideFlags: 0

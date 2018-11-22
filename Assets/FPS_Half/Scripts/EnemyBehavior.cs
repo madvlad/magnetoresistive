@@ -9,11 +9,18 @@ public class EnemyBehavior : MonoBehaviour {
     public GameObject painMesh;
     public int Health;
 
+    private GameObject playerGameObject;
+
+    void Start()
+    {
+        playerGameObject = GameObject.FindGameObjectWithTag("Player");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player hit!");
+            other.gameObject.SendMessage("Die");
         }
     }
 
@@ -30,6 +37,31 @@ public class EnemyBehavior : MonoBehaviour {
         {
             painMesh.GetComponent<MeshRenderer>().enabled = true;
             Invoke("HidePain", 1f);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        Vector3 parentObjectPosition = gameObject.transform.position;
+        RaycastHit hit;
+        Vector3 direction = playerGameObject.transform.position - parentObjectPosition;
+
+        Ray ray = new Ray(parentObjectPosition, direction);
+        int layerMask = 1 << 10;
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+        {
+            if (hit.collider.CompareTag("Enemy"))
+            {
+                Debug.DrawRay(parentObjectPosition, direction * 10000f, Color.green);
+                float step = 20 * Time.deltaTime;
+                Debug.Log(gameObject.transform.parent.name + " Sees You");
+                parentObjectPosition = Vector3.MoveTowards(parentObjectPosition, playerGameObject.transform.position, step);
+            }
+            else
+            {
+                Debug.DrawRay(parentObjectPosition, direction * 10000f, Color.red);
+            }
         }
     }
 
