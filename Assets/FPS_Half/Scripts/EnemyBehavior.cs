@@ -53,8 +53,8 @@ public class EnemyBehavior : MonoBehaviour {
             if (hit.collider.CompareTag("Player"))
             {
                 Debug.DrawRay(parentObjectPosition, direction * 10000f, Color.green);
-                float step = Time.deltaTime;
-                gameObject.transform.parent.transform.Translate(direction * Time.deltaTime);
+                float step = Time.deltaTime * 1.4f;
+                gameObject.transform.parent.transform.Translate(direction * step);
                 Debug.Log(parentObjectPosition);
             }
         }
