@@ -32,8 +32,10 @@ public class Shooter : MonoBehaviour {
             Invoke("HideFlash", 0.05f);
 
             RaycastHit hit;
-            int layerMask = ~(1 << 2);
-            
+            int ignoreRaycastLayer = 1 << 2;
+            int ignoreViewModelLayer = 1 << 9;
+            int layerMask = ~(ignoreRaycastLayer | ignoreViewModelLayer);
+
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, Mathf.Infinity, layerMask))
             {
                 if (hit.collider.CompareTag("Enemy"))

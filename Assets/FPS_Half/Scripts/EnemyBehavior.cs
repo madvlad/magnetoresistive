@@ -47,11 +47,10 @@ public class EnemyBehavior : MonoBehaviour {
         Vector3 direction = playerGameObject.transform.position - parentObjectPosition;
 
         Ray ray = new Ray(parentObjectPosition, direction);
-        int layerMask = 1 << 10;
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+        if (Physics.Raycast(ray, out hit, float.MaxValue))
         {
-            if (hit.collider.CompareTag("Enemy"))
+            if (hit.collider.CompareTag("Player"))
             {
                 Debug.DrawRay(parentObjectPosition, direction * 10000f, Color.green);
                 float step = 20 * Time.deltaTime;
