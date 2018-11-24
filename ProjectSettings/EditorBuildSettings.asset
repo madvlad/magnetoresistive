@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FPS_Half/_Scenes/FPS_Scenes/Level2.unity
     guid: 61de52a435bb3bc4498265510eb96779
+  - enabled: 1
+    path: Assets/FPS_Half/_Scenes/FPS_Scenes/Level3.unity
+    guid: bee931fe51d30ba4fa243631c7f49a32
   m_configObjects: {}

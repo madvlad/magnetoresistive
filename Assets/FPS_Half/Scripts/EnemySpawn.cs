@@ -8,6 +8,6 @@ public class EnemySpawn : MonoBehaviour {
 	
 	void Spawn()
     {
-        Instantiate(enemy);
+        Instantiate(enemy, gameObject.transform);
     }
 }
