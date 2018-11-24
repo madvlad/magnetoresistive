@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/FPS_Half/_Scenes/MainMenu.unity
+    guid: e308eda636c690342b55a785abf69069
+  - enabled: 1
     path: Assets/FPS_Half/_Scenes/FPS_Scenes/Level1.unity
     guid: 313bbfe475a42bc4e9388e07475e782b
   - enabled: 1
