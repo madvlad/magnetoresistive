@@ -10,10 +10,12 @@ public class EnemyBehavior : MonoBehaviour {
     public int Health;
 
     private GameObject playerGameObject;
+    private GameObject managerGameObject;
 
     void Start()
     {
         playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        managerGameObject = GameObject.FindGameObjectWithTag("Manager");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,10 +54,8 @@ public class EnemyBehavior : MonoBehaviour {
         {
             if (hit.collider.CompareTag("Player"))
             {
-                Debug.DrawRay(parentObjectPosition, direction * 10000f, Color.green);
                 float step = Time.deltaTime * 1.4f;
                 gameObject.transform.parent.transform.Translate(direction * step);
-                Debug.Log(parentObjectPosition);
             }
         }
     }
@@ -66,6 +66,7 @@ public class EnemyBehavior : MonoBehaviour {
         gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<AudioSource>().Stop();
         gameObject.GetComponent<AudioSource>().PlayOneShot(deathSound, 15.0F);
+        managerGameObject.SendMessage("Progress");
         Invoke("DestroySelf", 10.0f);
     }
 
