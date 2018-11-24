@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Level1Objectives : MonoBehaviour {
     public int KillCount = 0;
     public int Target;
+    public Text numberLeftText;
+    public GameObject ErrorText;
+    public GameObject GoodText;
 
 	void Progress()
     {
@@ -12,16 +16,18 @@ public class Level1Objectives : MonoBehaviour {
 
         if (KillCount >= Target)
         {
+            numberLeftText.text = "0";
             Win();
         }
         else
         {
-            Debug.Log(Target - KillCount + " Enemies Left");
+            numberLeftText.text = (Target - KillCount).ToString();
         }
     }
 
     void Win()
     {
-        Debug.Log("You win");
+        ErrorText.SetActive(false);
+        GoodText.SetActive(true);
     }
 }
