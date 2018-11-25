@@ -10,4 +10,8 @@ public class EnemySpawn : MonoBehaviour {
     {
         Instantiate(enemy, gameObject.transform);
     }
+
+    void OnDestroy() {
+        GameObject.FindGameObjectsWithTag("Manager")[0].GetComponent<SpawnHandler>().SendMessage("EnemyDestroyed");
+    }
 }
