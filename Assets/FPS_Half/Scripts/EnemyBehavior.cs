@@ -8,6 +8,7 @@ public class EnemyBehavior : MonoBehaviour {
     public AudioClip deathSound;
     public GameObject painMesh;
     public int Health;
+    public float speed = 1.4f;
 
     private GameObject playerGameObject;
     private GameObject managerGameObject;
@@ -54,7 +55,7 @@ public class EnemyBehavior : MonoBehaviour {
         {
             if (hit.collider.CompareTag("Player"))
             {
-                float step = Time.deltaTime * 1.4f;
+                float step = Time.deltaTime * speed;
                 gameObject.transform.parent.transform.Translate(direction * step);
             }
         }

@@ -21993,6 +21993,11 @@ Prefab:
       propertyPath: m_Name
       value: VirusEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114355633676268694, guid: fed51435fafb70e49ae74a357d16d36b,
+        type: 2}
+      propertyPath: speed
+      value: 1.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fed51435fafb70e49ae74a357d16d36b, type: 2}
   m_IsPrefabAsset: 0

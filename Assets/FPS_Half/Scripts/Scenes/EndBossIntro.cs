@@ -13,6 +13,7 @@ public class EndBossIntro : MonoBehaviour {
     public GameObject enemy2;
     public GameObject enemy3;
     public GameObject enemy4;
+    public GameObject enemySpawners;
 
     public GameObject floor;
     public GameObject innerWalls;
@@ -30,6 +31,7 @@ public class EndBossIntro : MonoBehaviour {
         Invoke("Step9", 54.0f);
         Invoke("Step10", 60.0f);
         Invoke("Step11", 106.0f);
+        Invoke("Step12", 134.0f);
     }
 
     void Step1() { light1.SetActive(true); }
@@ -43,6 +45,7 @@ public class EndBossIntro : MonoBehaviour {
     void Step9() { enemy4.SetActive(true); }
     void Step10() { floor.SetActive(false); }
     void Step11() { innerWalls.SetActive(false); }
+    void Step12() { enemySpawners.SetActive(true);  }
 
     // Update is called once per frame
     void Update () {
