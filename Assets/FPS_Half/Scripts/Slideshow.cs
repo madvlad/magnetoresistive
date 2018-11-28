@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Slideshow : MonoBehaviour {
 
     public List<GameObject> slidesInOrder;
+    public List<GameObject> slideTextInOrder;
     public int currentPage = 0;
     public string nextScene;
 
@@ -14,6 +15,7 @@ public class Slideshow : MonoBehaviour {
     {
         CrossFadeAlphaFixed(slidesInOrder[currentPage].GetComponent<Image>(), 0.0f, 2.0f, false);
         slidesInOrder[currentPage].GetComponent<Image>().CrossFadeColor(Color.black, 2.0f, false, false);
+        slideTextInOrder[currentPage].SetActive(false);
         currentPage++;
         if (currentPage == slidesInOrder.Count)
         {
@@ -23,6 +25,7 @@ public class Slideshow : MonoBehaviour {
         {
             CrossFadeAlphaFixed(slidesInOrder[currentPage].GetComponent<Image>(), 255.0f, 2.0f, false);
             slidesInOrder[currentPage].GetComponent<Image>().CrossFadeColor(Color.white, 2.0f, false, false);
+            slideTextInOrder[currentPage].SetActive(true);
         }
     }
     
