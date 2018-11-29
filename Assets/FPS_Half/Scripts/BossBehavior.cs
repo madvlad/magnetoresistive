@@ -30,6 +30,6 @@ public class BossBehavior : MonoBehaviour {
 
     void EndGame()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Cutscene5");
     }
 }

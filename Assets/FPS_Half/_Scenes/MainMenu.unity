@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7298bea038f094f9ffc018166bd7d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level1
+  sceneName: Cutscene1
   aboutWindow: {fileID: 1997160801}
 --- !u!1 &1311391645
 GameObject:
@@ -1163,6 +1163,7 @@ GameObject:
   - component: {fileID: 1759992815}
   - component: {fileID: 1759992814}
   - component: {fileID: 1759992813}
+  - component: {fileID: 1759992816}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1231,6 +1232,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1759992816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1759992812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bdf1c247efd04742900000c27b3268b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1955871424
 GameObject:
   m_ObjectHideFlags: 0

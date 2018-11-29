@@ -17,4 +17,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FPS_Half/_Scenes/FPS_Scenes/Level3.unity
     guid: bee931fe51d30ba4fa243631c7f49a32
+  - enabled: 1
+    path: Assets/FPS_Half/_Scenes/Cutscenes/Cutscene1.unity
+    guid: a48dae7533be2d549b8d403f20b2c4c8
+  - enabled: 1
+    path: Assets/FPS_Half/_Scenes/Cutscenes/Cutscene2.unity
+    guid: 3c1aef68027fcdf4ba46031dfc18a2db
+  - enabled: 1
+    path: Assets/FPS_Half/_Scenes/Cutscenes/Cutscene3.unity
+    guid: 27c1b23815820514ab8f1b32f11de1be
+  - enabled: 1
+    path: Assets/FPS_Half/_Scenes/Cutscenes/Cutscene4.unity
+    guid: e94d3776cfa9a6949beeff6944e35013
+  - enabled: 1
+    path: Assets/FPS_Half/_Scenes/Cutscenes/Cutscene5.unity
+    guid: e494c24ffb5a2944497353db38010e14
+  - enabled: 1
+    path: Assets/FPS_Half/_Scenes/FPS_Scenes/Level4.unity
+    guid: a7b7a445ff50da642869e4d6b16e3db8
   m_configObjects: {}

@@ -8,6 +8,6 @@ public class Level2Objectives : MonoBehaviour {
     // Use this for initialization
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Cutscene3");
     }
 }

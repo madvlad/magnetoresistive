@@ -35,6 +35,6 @@ public class Level1Objectives : MonoBehaviour {
 
     void LoadScene()
     {
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Cutscene2");
     }
 }
