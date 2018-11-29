@@ -12,6 +12,9 @@ public class EnemySpawn : MonoBehaviour {
     }
 
     void OnDestroy() {
-        GameObject.FindGameObjectsWithTag("Manager")[0].GetComponent<SpawnHandler>().SendMessage("EnemyDestroyed");
+        if (GameObject.FindGameObjectsWithTag("Manager").Count > 1)
+        {
+            GameObject.FindGameObjectsWithTag("Manager")[0].GetComponent<SpawnHandler>().SendMessage("EnemyDestroyed");
+        }
     }
 }
