@@ -23,4 +23,4 @@ Programming : @madvlad and @xweskingx
 Tools : Unity, Audacity, GIMP
 
 # Released!
-https://nahob.itch.io/magnetoresistive
+Play it here : https://nahob.itch.io/magnetoresistive
