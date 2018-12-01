@@ -69,8 +69,10 @@ public class EnemyBehavior : MonoBehaviour {
         gameObject.GetComponent<AudioSource>().PlayOneShot(deathSound, 15.0F);
         if (managerGameObject != null)
         {
+            managerGameObject.SendMessage("EnemyDestroyed");
             managerGameObject.SendMessage("Progress");
         }
+
         Invoke("DestroySelf", 10.0f);
     }
 

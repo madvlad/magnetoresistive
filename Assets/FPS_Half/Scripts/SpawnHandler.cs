@@ -10,10 +10,12 @@ public class SpawnHandler : MonoBehaviour {
     private float spawnCounter;
     private int enemiesSpawned = 0;
     private int enemiesDestroyed = 0;
+    private SpawnCycleHandler spawnCycleHandler;
 
     private void Start()
     {
         spawnCounter = spawnCooldown;
+        spawnCycleHandler = GameObject.FindGameObjectsWithTag("Manager")[0].GetComponent<SpawnCycleHandler>();
     }
 
     void Update () {
@@ -32,10 +34,10 @@ public class SpawnHandler : MonoBehaviour {
         }
 	}
 
-    void SpawnWave(int numToSpawn) {
-        Debug.Log("Spawning enemy");
+    public void SpawnWave(int numToSpawn) {
         enemiesSpawned = numToSpawn;
         for (int i = 0; i < numToSpawn; i++) {
+            Debug.Log("Spawning enemy");
             spawners[i].SendMessage("Spawn");
         }
     }
@@ -43,8 +45,8 @@ public class SpawnHandler : MonoBehaviour {
     void EnemyDestroyed() {
         enemiesDestroyed++;
 
-        if (enemiesDestroyed == enemiesSpawned) {
-            GameObject.FindGameObjectsWithTag("Manager")[0].GetComponent<SpawnCycleHandler>().SendMessage("NextWave");
+        if (isWaveSpawn && enemiesDestroyed == enemiesSpawned) {
+           spawnCycleHandler.NextWave();
         }
     }
 }
