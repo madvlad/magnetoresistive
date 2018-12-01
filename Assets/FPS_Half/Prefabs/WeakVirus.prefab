@@ -342,3 +342,4 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 24ce94a6f02613b4ca241a510881579f, type: 3}
   painMesh: {fileID: 1705950591008136}
   Health: 1
+  speed: 1.4
